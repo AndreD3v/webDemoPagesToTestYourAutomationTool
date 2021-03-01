@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Newspark - Colleague Exist</title>
+  <link href="newspark_stylesheet.css" media="all" rel="stylesheet" type="text/css">
+	<script src="./search_colleague.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+<div id='containerLarge'>
+  <h1>Colleague Exist</h1>
+  <p>Succesfull search!!! Go <a id= "back_to_home" href="index.html">back</a> if you want to do an another search.</p>
+  <p>Or just show a cool <a id="camp_norway_quote" href="img\CampNorwayQuote.jpg">image</a></p>
+  
+  <p>Enter a name to add to below list</p>
+  <form name="add_colleague_form" onsubmit="addColleague(this.add_colleague_input.value, this.add_photo_url_colleague_input.value); return false;">
+    <table>
+      <tr>
+        <td><label for="add_colleague_field">Colleague Name:</label></td>
+        <td><input id="add_colleague_input" size="5" type="text"></td>
+      </tr>
+      <tr>
+        <td><label for="add_photo_url_colleague_field">Url to Photo:</label></td>
+        <td><input id="add_photo_url_colleague_input" size="54" type="text"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input id="add_button" type="submit" value="Add Coleague"></td>
+      </tr>
+    </table>
+  </form>
+
+<form>
+  <p>Current shown photo: <select id="newsparkEmployeeDropdown" onchange=ShowColleaguePhotoAndName()> 
+    <option id="employeeDropdown_0000" value="">Please Select</option> 
+    <option id="employeeDropdown_0001"></option>
+    <option id="employeeDropdown_0002"></option>
+    <option id="employeeDropdown_0003"></option>
+    <option id="employeeDropdown_0004"></option>
+    <option id="employeeDropdown_0005"></option>
+    <option id="employeeDropdown_0006"></option>
+    <option id="employeeDropdown_0007"></option>
+    <option id="employeeDropdown_0008"></option>
+    <option id="employeeDropdown_0009"></option>
+    <option id="employeeDropdown_0010"></option>
+    <option id="employeeDropdown_0011"></option>
+    <option id="employeeDropdown_0012"></option>
+    <option id="employeeDropdown_0013"></option>
+    <option id="employeeDropdown_0014"></option>
+    <option id="employeeDropdown_0015"></option>
+    <option id="employeeDropdown_0016"></option>
+    <option id="employeeDropdown_0017"></option>
+    <option id="employeeDropdown_0018"></option>
+    <option id="employeeDropdown_0019"></option>
+    <option id="employeeDropdown_0020"></option>
+    <option id="employeeDropdown_0021"></option>
+    <option id="employeeDropdown_0022"></option>
+    <option id="employeeDropdown_0023"></option>
+    <option id="employeeDropdown_0024"></option>
+    <option id="employeeDropdown_0025"></option>
+    <option id="employeeDropdown_0026"></option>
+  </select></p>
+</form>
+
+  <p><img id="PasPhoto_PP" src="img\PP_newspark.jpg" width="151" height="152"></p>
+  <div id="Div_to_show_the_name"></div>
+  <br/><br/><div id="Div_to_show_the_joke"></div>
+
+<script type="text/javascript">
+window.onload = function() {
+  let newsparkEmployees = returnArrayWithAllColleagues();
+  let currentKnownNumberOfEmployees = newsparkEmployees.length;
+  for (let i = 0; i < newsparkEmployees.length; i++) {
+    let elementIdSuffix = returnNumberWithLeadingZerosUpToATotalOfFour(i+1); // +1 make sure the 'Please select' option is still visible
+    document.getElementById("employeeDropdown_" + elementIdSuffix).innerHTML = newsparkEmployees[i];
+  };
+};
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body {
+    font-family: Verdana, sans-serif;
+    color: #FFFFFF;
+    background: #5BC0DE;
+}
+#container {
+    width: 30em;
+    height: 15em;
+    margin: 5em auto;
+    background: #5BC0DE;
+    border: 1px solid gray;
+    padding: 0.5em 2em;
+}
+#containerLarge {
+    width: 30em;
+    height: 37em;
+    margin: 5em auto;
+    background: #5BC0DE;
+    border: 1px solid gray;
+    padding: 0.5em 2em;
+}
